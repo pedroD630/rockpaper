@@ -20,23 +20,23 @@ function getComputerChoice(){
 
 function compareValues(computerChoice, userChoice){
     if(computerChoice == "rock" && userChoice == "rock" || computerChoice == "paper" && userChoice == "paper" || computerChoice == "scissor" && userChoice == "scissor"){
-        console.log(`Draw. You choose ${userChoice} Computer choose ${computerChoice}`);
+        return `Draw. You choose ${userChoice} Computer choose ${computerChoice}`;
     }
     else if(computerChoice == "rock" && userChoice == "paper" || computerChoice == "paper" && userChoice == "scissor" || computerChoice == "scissor" && userChoice == "rock"){
-        console.log(`You Win! Congratulations! You choose ${userChoice} Computer choose ${computerChoice}`);
+        return `You Win! Congratulations! You choose ${userChoice} Computer choose ${computerChoice}`;
     }
     else if(computerChoice == "rock" && userChoice == "scissor" || computerChoice == "paper" && userChoice == "rock" || computerChoice == "scissor" && userChoice == "paper"){
-        console.log(`Nooooo! You was defeated! Try Again! You choose ${userChoice} Computer choose ${computerChoice}`);
+        return `Nooooo! You was defeated! Try Again! You choose ${userChoice} Computer choose ${computerChoice}`;
     }
     else{
-        console.log("Invalid choice. You choose " + userChoice);
+        return `Invalid choice. You choose ${userChoice}`;
     }
 }
 //receber escolha do usuario
 let userChoice = prompt("Rock, Paper or Scissor?").toLowerCase();
 let computerChoice = getComputerChoice();
-
 gameResult = compareValues(computerChoice, userChoice);
+console.log(gameResult);
 
 
 
