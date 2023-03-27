@@ -17,7 +17,11 @@ function getComputerChoice(){
     return computerChoice;
 }
 
-
+//receber escolha do usuario
+let userChoice = prompt("Rock, Paper or Scissor?").toLowerCase();
+//receber escolha do computador
+let computerChoice = getComputerChoice();
+//comparar valores
 function compareValues(computerChoice, userChoice){
     if(computerChoice == "rock" && userChoice == "rock" || computerChoice == "paper" && userChoice == "paper" || computerChoice == "scissor" && userChoice == "scissor"){
         return `Draw. You choose ${userChoice} Computer choose ${computerChoice}`;
@@ -32,12 +36,13 @@ function compareValues(computerChoice, userChoice){
         return `Invalid choice. You choose ${userChoice}`;
     }
 }
-//receber escolha do usuario
-let userChoice = prompt("Rock, Paper or Scissor?").toLowerCase();
-let computerChoice = getComputerChoice();
-gameResult = compareValues(computerChoice, userChoice);
-console.log(gameResult);
-
+//criar uma funcao que ao ser chamada inicia o jogo
+function gameStart(userChoice, computerChoice){
+    gameResult = compareValues(computerChoice, userChoice);
+    console.log(gameResult);
+}
+//chama a funcao para iniciar
+gameStart(userChoice, computerChoice);
 
 
 
