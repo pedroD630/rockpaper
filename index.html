@@ -5,9 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock, paper and scissors</title>
+    <link rel="stylesheet" href="./style.css">
     <script src="script.js"></script>
 </head>
 <body>
-    
+    <div class="principal">
+        <div id="escolha-user">
+            <label for="user-choice">Escolha Pedra, Papel ou Tesoura:</label>
+            <input type="text" id="user-choice" name="user-choice">
+            <button id="jogar">JOGAR!</button>
+        </div>
+        <div id="combate">
+            <div id="user">
+                <p id="teste-user"></p>
+            </div>
+            <div id="versus">
+                <img src="./img/VS-Versus-logo-letters-for-sports-icon-Graphics-5352736-1-580x387-removebg-preview.png" alt="Versus">
+            </div>
+            <div id="bot">
+                <p id="teste-bot"></p>
+            </div>
+        </div>
+        <div id="repeat-button">
+            <button id="resetar">Resetar contagem</button>
+        </div>
+    </div>
 </body>
 </html>
