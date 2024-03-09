@@ -5,7 +5,8 @@ Este é um projeto web do jogo "Pedra, Papel e Tesoura" onde o jogador pode joga
 ### Objetivos
 
 O objetivo deste projeto é criar uma interface de usuário interativa para o jogo "Pedra, Papel e Tesoura", permitindo que o jogador faça suas escolhas através de botões e exibindo os resultados na tela.
-Funcionalidades
+
+### Funcionalidades
 
     O jogador pode escolher entre Pedra, Papel ou Tesoura clicando nos botões correspondentes.
     A cada escolha feita pelo jogador, o jogo calcula o resultado e exibe na tela quem ganhou a rodada.
