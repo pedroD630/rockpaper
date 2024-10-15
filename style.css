@@ -1,13 +1,117 @@
 body{
-    background-color: #1c1c1c;
-    color: #fcfcfc;
-    font-family: sans-serif;
+    color: #f9fafc;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.principal{
+    min-height: 100dvh;
+    width: 100vw;
+    overflow-x: hidden;
+    background-color: #110f0f;
+    padding-top: 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.panel{
+    height: 70px;
+    background-color: #eee;
+    color: #1c1c1c;
+    border: 3px solid #000;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0px 10px 0px 10px;
+    box-sizing: border-box;
+    gap: 30px;
+}
+
+.narrator{
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.points{
+    width: 40px;
+    height: 70%;
+    border-radius: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #f9fafc;
+    border: 3px solid #000;
     font-size: 20px;
 }
-#escolha-user{
+
+
+#user.points{
+    background-color: #2b25e8;
+}
+
+#robot.points{
+    background-color: #d2232a;
+}
+
+.no-margin{
+    margin: 0;
+}
+
+.game-selectors{
+    width: 80vw;
     display: flex;
-    align-items: center;
     justify-content: center;
     gap: 20px;
-    margin-top: 40px;
 }
+
+.selector{
+    height: 200px;
+    background-color: #deebff;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #2b25e8;
+    box-shadow: 0 0 10px 1px rgba(101, 97, 230, 0.94);
+    transition: all ease 0.3s;
+}
+
+.selector:hover{
+    height: 220px;
+}
+
+.selector img{
+    max-width: 98%;
+}
+
+.selector.grow{
+    width: 30vw;
+    height: 310px;
+}
+
+.modal {
+    display: none;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80vw;
+    height: 80vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+    border-radius: 20px;
+  }
+  
+  .modal.show {
+    display: flex;
+    opacity: 1;
+    align-items: center;
+    justify-content: center;
+  }

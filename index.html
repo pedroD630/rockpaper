@@ -5,30 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock, paper and scissors</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
-<body>
+<body class="no-margin">
     <div class="principal">
-        <div id="escolha-user">
-            <label for="user-choice">Escolha Pedra, Papel ou Tesoura:</label>
-            <input type="text" id="user-choice" name="user-choice">
-            <button id="jogar">JOGAR!</button>
+        <div class="panel">
+            <div class="points" id="user">1</div>
+            <div class="narrator">X</div>
+            <div class="points" id="robot">5</div>
         </div>
-        <div id="combate">
-            <div id="user">
-                <p id="teste-user"></p>
+        <div class="game-selectors">
+            <div class="selector" id="rock">
+                <img src="./img/rock.png">
             </div>
-            <div id="versus">
-                <img src="./img/VS-Versus-logo-letters-for-sports-icon-Graphics-5352736-1-580x387-removebg-preview.png" alt="Versus">
+            <div class="selector" id="paper">
+                <img src="./img/paper.png">
             </div>
-            <div id="bot">
-                <p id="teste-bot"></p>
+            <div class="selector" id="scissors">
+                <img src="./img/scissor.png">
             </div>
         </div>
-        <div id="repeat-button">
-            <button id="resetar">Resetar contagem</button>
+        <div class="game-opt">
+            <div id="restart"></div>
+            <div id="change-username"></div>
         </div>
+        <div class="modal" id="get_username"></div>
+        <div class="modal" id="start_lore"></div>
+        <div class="modal" id="round_winner"></div>
     </div>
 </body>
 </html>
