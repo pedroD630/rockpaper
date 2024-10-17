@@ -12,7 +12,7 @@
     <div class="principal">
         <div class="panel">
             <div class="points" id="user">1</div>
-            <div class="narrator">X</div>
+            <div class="versus">X</div>
             <div class="points" id="robot">5</div>
         </div>
         <div class="game-selectors">
@@ -32,7 +32,29 @@
         </div>
         <div class="modal" id="get_username"></div>
         <div class="modal" id="start_lore"></div>
-        <div class="modal" id="round_winner"></div>
+        <div class="modal" id="round_winner">
+            <div class="game-result">
+                <p id="narrator"></p>
+            </div>
+            <div id="battle">
+                <div id="winner">
+                    <img id="w-scissor" src="./img/scissor.png">
+                    <img id="w-paper" src="./img/paper.png">
+                    <img id="w-rock" src="./img/rock.png">
+                    <img id="wb-scissor" src="./img/bad-scissor.png">
+                    <img id="wb-paper" src="./img/bad-paper.png">
+                    <img id="wb-rock" src="./img/bad-rock.png">
+                </div>
+                <div id="loser">
+                    <img id="l-scissor" src="./img/scissor.png">
+                    <img id="l-paper" src="./img/paper.png">
+                    <img id="l-rock" src="./img/rock.png">
+                    <img id="lb-scissor" src="./img/bad-scissor.png">
+                    <img id="lb-paper" src="./img/bad-paper.png">
+                    <img id="lb-rock" src="./img/bad-rock.png">
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
