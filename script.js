@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function updatePoints(winner) {
         let userPoints = document.getElementById("user");
         let botPoints = document.getElementById("robot");
-        console.log(winner)
         switch (winner) {
             case 0:
                 placar[0]++;
@@ -47,7 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
     selectors.forEach(selector => {
         selector.addEventListener('click', (event) => {
             const userChoice = event.currentTarget.id;
-            console.log(userChoice);
             gameStart(userChoice, getComputerChoice());
         });
     });
