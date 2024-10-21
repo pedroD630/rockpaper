@@ -15,6 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 placar[1]++;
                 botPoints.textContent = `${placar[1]}`;
                 break;
+            case 2:
+                placar[0] = 0;
+                placar[1] = 0;
+                userPoints.textContent = `${placar[0]}`;
+                botPoints.textContent = `${placar[1]}`;
         }
     }
 
@@ -71,8 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (placar[0] == 5) {
                     narrator.textContent = "AI is over! The world is in peace.";
-                    placar[0] = 0;
-                    placar[1] = 0;
+                    updatePoints(2);
                 } else {
                     narrator.textContent = "You Win!";
                 }
@@ -87,8 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (placar[0] == 5) {
                     narrator.textContent = "You Lose! AI dominated the world!";
-                    placar[0] = 0;
-                    placar[1] = 0;
+                    updatePoints(2);
                 } else {
                     narrator.textContent = "Defeated!";
                 }
