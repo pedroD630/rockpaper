@@ -1,13 +1,205 @@
-body{
-    background-color: #1c1c1c;
-    color: #fcfcfc;
-    font-family: sans-serif;
-    font-size: 20px;
+@import url('https://fonts.googleapis.com/css2?family=Sixtyfour+Convergence&display=swap');
+
+* {
+  box-sizing: border-box;
 }
-#escolha-user{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 40px;
+
+body {
+  color: #f9fafc;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.principal {
+  min-height: 100dvh;
+  width: 100vw;
+  overflow-x: hidden;
+  background-color: #110f0f;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.principal.draw {
+    background-color: #110f0f;
+}
+
+.principal.win {
+    background-color: #001731; 
+}
+
+.principal.lose {
+    background-color: #350005;
+}
+
+.panel {
+  height: 70px;
+  background-color: #eee;
+  color: #1c1c1c;
+  border: 3px solid #000;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0px 10px 0px 10px;
+  gap: 30px;
+}
+
+.versus {
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.points {
+  width: 40px;
+  height: 70%;
+  border-radius: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f9fafc;
+  border: 3px solid #000;
+  font-size: 20px;
+}
+
+#user.points {
+  background-color: #2b25e8;
+}
+
+#robot.points {
+  background-color: #d2232a;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.game-selectors {
+  width: 80vw;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.selector {
+  height: 200px;
+  background-color: #deebff;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #2b25e8;
+  box-shadow: 0 0 10px 1px rgba(101, 97, 230, 0.94);
+  transition: all ease 0.3s;
+}
+
+.selector:hover {
+  height: 220px;
+}
+
+.selector img {
+  max-width: 98%;
+}
+
+.selector.grow {
+  width: 30vw;
+  height: 310px;
+}
+
+.modal {
+  display: none;
+  opacity: 0;
+  position: fixed;
+  width: 80vw;
+  height: 80vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  transition: opacity 0.5s ease;
+  transition: background-color 0.5s ease-in-out;
+  border-radius: 20px;
+  border: 3px solid black;
+}
+
+.modal.show {
+  display: flex;
+  opacity: 1;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 50px;
+  padding: 30px;
+}
+
+.modal div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#round_winner .game-result,
+#battle #loser {
+  max-width: 20%;
+  max-height: fit-content;
+}
+#round_winner #battle,
+#battle #winner {
+  max-width: 100%;
+  max-height: fit-content;
+}
+
+.modal img {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+}
+
+#battle {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.result-img {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.result-img.show {
+  display: block;
+  opacity: 1;
+}
+
+#narrator {
+    font-family: 'Sixtyfour Convergence', sans-serif;
+    color: #deebff;
+    font-size: 25px;
+}
+
+.modal.draw {
+    background-color: rgba(176, 176, 176, 0.95);
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.94);
+}
+
+.modal.win {
+    background-color: rgba(0, 81, 168, 0.95);
+    border: 2px solid #2b25e8;
+    box-shadow: 0 0 10px 1px rgba(101, 97, 230, 0.94);
+}
+
+.modal.lose {
+    background-color: rgba(189, 8, 26, 0.95);
+    border: 2px solid #e82525;
+    box-shadow: 0 0 10px 1px rgba(230, 97, 104, 0.94);
+}
+
+#winner img {
+  max-width: 300px;
+}
+
+#loser img {
+  max-width: 150px;
 }

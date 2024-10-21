@@ -5,29 +5,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock, paper and scissors</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
-<body>
+<body class="no-margin">
     <div class="principal">
-        <div id="escolha-user">
-            <label for="user-choice">Escolha Pedra, Papel ou Tesoura:</label>
-            <input type="text" id="user-choice" name="user-choice">
-            <button id="jogar">JOGAR!</button>
+        <div class="panel">
+            <div class="points" id="user">0</div>
+            <div class="versus">X</div>
+            <div class="points" id="robot">0</div>
         </div>
-        <div id="combate">
-            <div id="user">
-                <p id="teste-user"></p>
+        <div class="game-selectors">
+            <div class="selector" id="rock">
+                <img src="./img/hero/rock.png">
             </div>
-            <div id="versus">
-                <img src="./img/VS-Versus-logo-letters-for-sports-icon-Graphics-5352736-1-580x387-removebg-preview.png" alt="Versus">
+            <div class="selector" id="paper">
+                <img src="./img/hero/paper.png">
             </div>
-            <div id="bot">
-                <p id="teste-bot"></p>
+            <div class="selector" id="scissor">
+                <img src="./img/hero/scissor.png">
             </div>
         </div>
-        <div id="repeat-button">
-            <button id="resetar">Resetar contagem</button>
+        <div class="game-opt">
+            <div id="restart"></div>
+            <div id="change-username"></div>
+        </div>
+        <div class="modal" id="get_username"></div>
+        <div class="modal" id="start_lore"></div>
+        <div class="modal" id="round_winner">
+            <div class="game-result">
+                <p id="narrator"></p>
+            </div>
+            <div id="battle">
+                <div id="winner">
+                    <img class="result-img" id="w-scissor" src="./img/hero/scissor.png">
+                    <img class="result-img" id="w-paper" src="./img/hero/paper.png">
+                    <img class="result-img" id="w-rock" src="./img/hero/rock.png">
+                    <img class="result-img" id="wb-scissor" src="./img/bad/scissor.png">
+                    <img class="result-img" id="wb-paper" src="./img/bad/paper.png">
+                    <img class="result-img" id="wb-rock" src="./img/bad/rock.png">
+                </div>
+                <div id="loser">
+                    <img class="result-img" id="l-scissor" src="./img/hero/scissor.png">
+                    <img class="result-img" id="l-paper" src="./img/hero/paper.png">
+                    <img class="result-img" id="l-rock" src="./img/hero/rock.png">
+                    <img class="result-img" id="lb-scissor" src="./img/bad/scissor.png">
+                    <img class="result-img" id="lb-paper" src="./img/bad/paper.png">
+                    <img class="result-img" id="lb-rock" src="./img/bad/rock.png">
+                </div>
+            </div>
         </div>
     </div>
 </body>
