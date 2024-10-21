@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Sixtyfour+Convergence&display=swap');
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   color: #f9fafc;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
@@ -11,7 +15,6 @@ body {
   overflow-x: hidden;
   background-color: #110f0f;
   padding-top: 30px;
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -43,7 +46,6 @@ body {
   align-items: center;
   justify-content: space-around;
   padding: 0px 10px 0px 10px;
-  box-sizing: border-box;
   gap: 30px;
 }
 
@@ -129,7 +131,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 50px;
   padding: 30px;
 }
 
@@ -138,13 +140,15 @@ body {
   align-items: center;
   justify-content: center;
 }
-#round_winner.game-result,
+#round_winner .game-result,
 #battle #loser {
-  width: 20%;
+  max-width: 20%;
+  max-height: fit-content;
 }
-#round_winner.battle,
+#round_winner #battle,
 #battle #winner {
-  width: 70%;
+  max-width: 100%;
+  max-height: fit-content;
 }
 
 .modal img {
@@ -155,7 +159,7 @@ body {
 
 #battle {
   flex-direction: row;
-  gap: 10px;
+  justify-content: space-between;
 }
 
 .result-img {
@@ -175,17 +179,27 @@ body {
     font-size: 40px;
 }
 
-/* Draw background (Gray with 30% opacity) */
 .modal.draw {
-    background-color: rgba(176, 176, 176, 0.900); /* Neutral gray with 30% opacity */
+    background-color: rgba(176, 176, 176, 0.95);
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.94);
 }
 
-/* Win background (Blue with 30% opacity) */
 .modal.win {
-    background-color: rgba(0, 81, 168, 0.900); /* Sky Blue with 30% opacity */
+    background-color: rgba(0, 81, 168, 0.95);
+    border: 2px solid #2b25e8;
+    box-shadow: 0 0 10px 1px rgba(101, 97, 230, 0.94);
 }
 
-/* Lose background (Red with 30% opacity) */
 .modal.lose {
-    background-color: rgba(189, 8, 26, 0.900); /* Light red with 30% opacity */
+    background-color: rgba(189, 8, 26, 0.95);
+    border: 2px solid #e82525;
+    box-shadow: 0 0 10px 1px rgba(230, 97, 104, 0.94);
+}
+
+#winner img {
+  max-width: 300px;
+}
+
+#loser img {
+  max-width: 150px;
 }
