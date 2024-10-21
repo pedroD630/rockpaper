@@ -69,7 +69,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 roundWinner.classList.add('win');
                 principal.classList.add('win');
 
-                narrator.textContent = "You Win!";
+                if (placar[0] == 5) {
+                    narrator.textContent = "AI is over! The world is in peace.";
+                    placar[0] = 0;
+                    placar[1] = 0;
+                } else {
+                    narrator.textContent = "You Win!";
+                }
+                
                 break;
 
             case 1: // Computer win
@@ -78,7 +85,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 roundWinner.classList.add('lose');
                 principal.classList.add('lose');
 
-                narrator.textContent = "Defeated!";
+                if (placar[0] == 5) {
+                    narrator.textContent = "You Lose! AI dominated the world!";
+                    placar[0] = 0;
+                    placar[1] = 0;
+                } else {
+                    narrator.textContent = "Defeated!";
+                }
                 break;
 
             case 2: // Draw
@@ -106,19 +119,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function compareValues(computerChoice, userChoice) {
         if (computerChoice == "rock" && userChoice == "rock" || computerChoice == "paper" && userChoice == "paper" || computerChoice == "scissor" && userChoice == "scissor") {
-            showResult(2, userChoice, computerChoice);
             updatePoints(2);
-            return `Draw. You choose ${userChoice} Computer choose ${computerChoice}`;
+            showResult(2, userChoice, computerChoice);
         }
         else if (computerChoice == "rock" && userChoice == "paper" || computerChoice == "paper" && userChoice == "scissor" || computerChoice == "scissor" && userChoice == "rock") {
-            showResult(0, userChoice, computerChoice);
             updatePoints(0);
-            return `You Win! Congratulations! You choose ${userChoice} Computer choose ${computerChoice}`;
+            showResult(0, userChoice, computerChoice);
         }
         else if (computerChoice == "rock" && userChoice == "scissor" || computerChoice == "paper" && userChoice == "rock" || computerChoice == "scissor" && userChoice == "paper") {
-            showResult(1, userChoice, computerChoice);
             updatePoints(1);
-            return `Nooooo! You was defeated! Try Again! You choose ${userChoice} Computer choose ${computerChoice}`;
+            showResult(1, userChoice, computerChoice);
         }
         else {
             return `Invalid choice. You choose ${userChoice}`;
@@ -127,11 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function gameStart(userChoice, computerChoice) {
         gameResult = compareValues(computerChoice, userChoice);
-        console.log(gameResult);
-        // atualizar placar com base no game result
-        //no fim da função, se alguém tiver 5 pontos, zerar;
     }
-    //chama a funcao para iniciar
 
 });
 
