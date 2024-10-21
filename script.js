@@ -1,4 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+    let placar = [0, 0]; //[0] -> player [1] -> bot
+
+    function updatePoints(winner) {
+        let userPoints = document.getElementById("user");
+        let botPoints = document.getElementById("robot");
+        console.log(winner)
+        switch (winner) {
+            case 0:
+                placar[0]++;
+                userPoints.textContent = `${placar[0]}`;
+                break;
+            case 1:
+                placar[1]++;
+                botPoints.textContent = `${placar[1]}`;
+                break;
+        }
+    }
+
     //gerar escolha aleatória do computador
     function getComputerChoice() {
         let possibleChoices = ["Rock", "Paper", "Scissor"];
@@ -17,9 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         return computerChoice;
     }
-
-    //receber escolha do usuario
-    //let userChoice = prompt("Rock, Paper or Scissor?").toLowerCase();
 
     const selectors = document.querySelectorAll('.selector');
 
@@ -91,14 +107,17 @@ document.addEventListener('DOMContentLoaded', () => {
     function compareValues(computerChoice, userChoice) {
         if (computerChoice == "rock" && userChoice == "rock" || computerChoice == "paper" && userChoice == "paper" || computerChoice == "scissor" && userChoice == "scissor") {
             showResult(2, userChoice, computerChoice);
+            updatePoints(2);
             return `Draw. You choose ${userChoice} Computer choose ${computerChoice}`;
         }
         else if (computerChoice == "rock" && userChoice == "paper" || computerChoice == "paper" && userChoice == "scissor" || computerChoice == "scissor" && userChoice == "rock") {
             showResult(0, userChoice, computerChoice);
+            updatePoints(0);
             return `You Win! Congratulations! You choose ${userChoice} Computer choose ${computerChoice}`;
         }
         else if (computerChoice == "rock" && userChoice == "scissor" || computerChoice == "paper" && userChoice == "rock" || computerChoice == "scissor" && userChoice == "paper") {
             showResult(1, userChoice, computerChoice);
+            updatePoints(1);
             return `Nooooo! You was defeated! Try Again! You choose ${userChoice} Computer choose ${computerChoice}`;
         }
         else {
