@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function compareValues(computerChoice, userChoice) {
         if (computerChoice == "rock" && userChoice == "rock" || computerChoice == "paper" && userChoice == "paper" || computerChoice == "scissor" && userChoice == "scissor") {
-            updatePoints(2);
+            //não atualiza pontos (empate)
             showResult(2, userChoice, computerChoice);
         }
         else if (computerChoice == "rock" && userChoice == "paper" || computerChoice == "paper" && userChoice == "scissor" || computerChoice == "scissor" && userChoice == "rock") {
