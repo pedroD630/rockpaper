@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 roundWinner.classList.add('lose');
                 principal.classList.add('lose');
 
-                if (placar[0] == 5) {
+                if (placar[1] == 5) {
                     narrator.textContent = "You Lose! AI dominated the world!";
                     updatePoints(2);
                 } else {
